@@ -72,6 +72,12 @@ $per-100:100%;
   color: $col;
 }
 
+@mixin posi-style($left, $top, $zin) {
+  position: absolute;
+  left: $left;
+  top: $top;
+  z-index: $zin;
+}
 
 
 // ------------------------------------------------------
@@ -89,25 +95,78 @@ main{
   @include main-style();
 
   &>section{
-    @include flex-setting(center, center);
-  }
-
-  &>section:first-child{
-    @include size(95%, 35%);
-    border: $solid-black;
-
-    &>div:first-child{
-      @include box-style(150px, 150px, $color-1);
-      border-radius: 50%;
-    }
-
-  }
-
-  &>section:last-child{
-    @include size(95%, 50%);
-    border: $solid-black;
+    @include flex-setting(space-evenly, center);
   }
 
 }
+
+#main-top{
+  @include size(95%, 35%);
+  position: relative;
+
+  &>div:first-child{
+    @include box-style(250px, 250px, $color-1);
+    border-radius: 50%;
+    @include posi-style(20%, 20%,1);
+  }
+  
+  &>div:last-child{
+    @include size(89%, 15%);
+    @include posi-style(10%, 60%,2);
+    @include font-style(2rem, 600, $color-4);
+  }
+}
+
+#main-bottom{
+  @include size(95%, 50%);
+  color: $color-4;
+
+  &>div{
+    @include size(45%, 80%);
+    @include flex-setting(space-evenly, flex-start);
+    flex-direction: column;
+  }
+
+}
+
+#left-container{
+  &> div:nth-child(1){
+    @include box-style(90%,50% , $color-1);
+  }
+
+  &> div:nth-child(2){
+    @include size(90%, 10%);
+    cursor: pointer;
+  }
+
+  &> div:nth-child(3){
+    @include size(90%, 10%);
+    cursor: pointer;
+
+  }
+}
+
+#right-container{
+  
+  &> div:nth-child(1){
+    @include size(90%, 10%);
+    cursor: pointer;
+  }
+  
+  &> div:nth-child(2){
+    @include size(90%, 10%);
+    cursor: pointer;
+  }
+
+  &> div:nth-child(3){
+    @include box-style(90%,50% , $color-1);
+  }
+}
+
+
+
+
+
+
 
 

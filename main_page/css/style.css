@@ -25,22 +25,79 @@ main {
 }
 main > section {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
-main > section:first-child {
+
+#main-top {
   width: 95%;
   height: 35%;
-  border: 1px solid black;
+  position: relative;
 }
-main > section:first-child > div:first-child {
-  width: 150px;
-  height: 150px;
+#main-top > div:first-child {
+  width: 250px;
+  height: 250px;
   background-color: #ebebeb;
   border-radius: 50%;
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  z-index: 1;
 }
-main > section:last-child {
+#main-top > div:last-child {
+  width: 89%;
+  height: 15%;
+  position: absolute;
+  left: 10%;
+  top: 60%;
+  z-index: 2;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #838383;
+}
+
+#main-bottom {
   width: 95%;
   height: 50%;
-  border: 1px solid black;
+  color: #838383;
+}
+#main-bottom > div {
+  width: 45%;
+  height: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+#left-container > div:nth-child(1) {
+  width: 90%;
+  height: 50%;
+  background-color: #ebebeb;
+}
+#left-container > div:nth-child(2) {
+  width: 90%;
+  height: 10%;
+  cursor: pointer;
+}
+#left-container > div:nth-child(3) {
+  width: 90%;
+  height: 10%;
+  cursor: pointer;
+}
+
+#right-container > div:nth-child(1) {
+  width: 90%;
+  height: 10%;
+  cursor: pointer;
+}
+#right-container > div:nth-child(2) {
+  width: 90%;
+  height: 10%;
+  cursor: pointer;
+}
+#right-container > div:nth-child(3) {
+  width: 90%;
+  height: 50%;
+  background-color: #ebebeb;
 }/*# sourceMappingURL=style.css.map */
