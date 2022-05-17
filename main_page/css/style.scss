@@ -1,0 +1,113 @@
+$width-root:100vw;
+$height-root:100vh;
+$color-black:black;
+$color-white:white;
+$color-bright-gray:#e2e2e2;
+$color-gray:#c4c4c4;
+$color-dark-gray:#838383;
+$color-1:#ebebeb;
+$color-2: #c0c0c0;
+$color-3: #a1a1a1;
+$color-4: #838383;
+$color-5: #464646;
+$color-6: #363636;
+$solid-black:1px solid black;
+$solid-gray:1px solid #888;
+$solid-red:1px solid #613c3c;
+$solid-pink:1px solid #FFAE9B;
+$solid-blue:1px solid #4f508b;
+$dotted-color:1px dotted #3b3e49;
+$dotted-pink:1px dotted #FFAE9B;
+
+$per-100:100%;
+
+
+
+// -----------------------------------------------------------------------------
+
+*{margin: 0; padding: 0;  box-sizing: border-box;}
+
+
+@mixin position($posi, $zindx) {
+  position: $posi;
+  z-index: $zindx;
+}
+
+@mixin flex-setting($jus, $ali) {
+  display: flex;
+  justify-content: $jus;
+  align-items: $ali;
+}
+
+
+@mixin root-style {
+  width: $width-root;
+  height: $height-root;
+}  
+
+@mixin main-style {
+  @include size($per-100, 93vh);
+  @include flex-setting(space-evenly, center);
+  flex-direction: column;
+}
+
+
+@mixin size($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin box-style($w, $h, $col) {
+  width: $w;
+  height: $h;
+  background-color: $col;
+}
+
+
+
+
+@mixin font-style($rem, $weight, $col) {
+  font-size: $rem ;
+  font-weight: $weight;
+  color: $col;
+}
+
+
+
+// ------------------------------------------------------
+
+#root{
+  @include root-style();
+}
+
+header{
+  @include size($per-100, 7vh);
+  border-bottom: $solid-gray;
+}
+
+main{
+  @include main-style();
+
+  &>section{
+    @include flex-setting(center, center);
+  }
+
+  &>section:first-child{
+    @include size(95%, 35%);
+    border: $solid-black;
+
+    &>div:first-child{
+      @include box-style(150px, 150px, $color-1);
+      border-radius: 50%;
+    }
+
+  }
+
+  &>section:last-child{
+    @include size(95%, 50%);
+    border: $solid-black;
+  }
+
+}
+
+
