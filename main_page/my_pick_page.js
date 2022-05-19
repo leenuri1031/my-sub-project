@@ -90,7 +90,7 @@ if(boolean === true){
   /* home-click-event------------------------------------- */
   icon.addEventListener('click', function() {
     if(boolean === true){
-      console.log('test');
+      // console.log('test');
       root.removeChild(container);
       root.appendChild(remove);
     }
@@ -171,8 +171,8 @@ if(boolean === true){
     section4Right.appendChild(menu);
   }
 
-  console.log(section4Left);
-  console.log(section4Right);
+  // console.log(section4Left);
+  // console.log(section4Right);
 
   const menu1 = section4Left.children[0];
   const menu2 = section4Right.children[0];
@@ -180,7 +180,7 @@ if(boolean === true){
   const menu4 = section4Right.children[1];
 
   const menues =[menu1, menu2, menu3, menu4];
-  console.log(menues);
+  // console.log(menues);
 
   for(let i = 0; i < menues.length; i++){
     size(menues[i], '90%', '45%');

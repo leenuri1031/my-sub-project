@@ -48,7 +48,7 @@ toNeedMenu1.addEventListener('click', function() {
     const needContainer = document.createElement('main');
 
   root1.appendChild(needContainer);
-  root1.style.color = colorArr[3];
+  root1.style.color = colorArr1[3];
   // console.log(root1.children);
   for(let i = 0; i < 4; i++){
     const needSection = document.createElement('section');
@@ -89,22 +89,32 @@ toNeedMenu1.addEventListener('click', function() {
     size(needSection2, '90%', '65%' );
     flexStyling(needSection2, 'space-evenly', 'center', 'column');
     // -------
-    const sectionChild = document.createElement('div');
-    needSection2.appendChild(sectionChild);
-    size(sectionChild, '100%', '22%');
-    sectionChild.style.border = '1px solid black';
-
-    const childLeft = document.createElement('div');
-    const childRight = document.createElement('div');
-    sectionChild.appendChild(childLeft);
-    sectionChild.appendChild(childRight);
-
-    // console.log(sectionChild.children);
-    boxStyling(childLeft, '50px', '50px', colorArr1[0]);
 
 
+    for(let i = 0; i < 5; i++){
+      const sectionChild = document.createElement('div');
+      needSection2.appendChild(sectionChild);
+    }
+
+    const sectionChilds = [needSection2.children[0], needSection2.children[1], needSection2.children[2], needSection2.children[3], needSection2.children[4]];
+
+    // console.log(sectionChilds);
+
+    for(let i = 0; i<sectionChilds.length; i++){
+      size(sectionChilds[i], '100%', '100%');
+      flexStyling(sectionChilds[i], 'space-between', 'center');
 
 
+      const childLeft = document.createElement('div');
+      const childRight = document.createElement('div');
+      sectionChilds[i].appendChild(childLeft);
+      sectionChilds[i].appendChild(childRight);
+    
+      // console.log(sectionChild.children);
+      boxStyling(childLeft, '100px', '100px', colorArr1[0]);
+      size(childRight, '65%', '20%');
+      childRight.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet.';
+    }
 
   /* const needSection2 -----------------------*/
 
@@ -126,7 +136,7 @@ toNeedMenu1.addEventListener('click', function() {
     needSection4.appendChild(needSection4Left);
     needSection4.appendChild(needSection4Right);
   
-    console.log(needSection4.children);
+    // console.log(needSection4.children);
 
     for(let i = 0; i < needSection4.children.length; i++){
       size(needSection4.children[i], '45%', '100%');
