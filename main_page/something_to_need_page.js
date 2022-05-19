@@ -23,7 +23,7 @@ let colorArr1 = ['#ebebeb', '#c0c0c0', '#a1a1a1', '#838383', '#464646', '#363636
 /* -------------------------------------------------------------------- */
 
 const root1 = document.getElementById('root');
-const mainContainer1 = root.children[1];
+const mainContainer1 = root1.children[1];
 
 const mainRightBox1 = document.getElementById('right-container');
 const mainLeftBox1 = document.getElementById('left-container');
@@ -88,38 +88,29 @@ toNeedMenu1.addEventListener('click', function() {
   /* const needSection2 -----------------------*/
     size(needSection2, '90%', '65%' );
     flexStyling(needSection2, 'space-evenly', 'center', 'column');
-    // -------
 
-
-    for(let i = 0; i < 5; i++){
+    for(let i = 0; i < 5; i++ ) {
       const sectionChild = document.createElement('div');
       needSection2.appendChild(sectionChild);
-    }
-
-    const sectionChilds = [needSection2.children[0], needSection2.children[1], needSection2.children[2], needSection2.children[3], needSection2.children[4]];
-
-    // console.log(sectionChilds);
-
-    for(let i = 0; i<sectionChilds.length; i++){
-      size(sectionChilds[i], '100%', '100%');
-      flexStyling(sectionChilds[i], 'space-between', 'center');
-
+      // console.log(needSection2.children);
+      size(needSection2.children[i], '100%', '18%');
+      flexStyling(needSection2.children[i], 'space-evenly','center');
 
       const childLeft = document.createElement('div');
       const childRight = document.createElement('div');
-      sectionChilds[i].appendChild(childLeft);
-      sectionChilds[i].appendChild(childRight);
-    
-      // console.log(sectionChild.children);
-      boxStyling(childLeft, '100px', '100px', colorArr1[0]);
-      size(childRight, '65%', '20%');
-      childRight.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet.';
+      needSection2.children[i].appendChild(childLeft);
+      needSection2.children[i].appendChild(childRight);
+      // needSection2.children[i]
+      // console.log(needSection2.children[i].children[0]);
+      boxStyling(needSection2.children[i].children[0], '25%', '100%', colorArr1[0]);
+      size(needSection2.children[i].children[1], '70%', '100%');
+      flexStyling(needSection2.children[i].children[1], 'center', 'center');
+      needSection2.children[i].children[1].textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget a quis sit egestas integer donec platea.';
     }
+  // /* const needSection2 -----------------------*/
 
-  /* const needSection2 -----------------------*/
 
-
-  /* const needSection3 -----------------------*/
+  // /* const needSection3 -----------------------*/
     size(needSection3, '50px', '50px' );
     needSection3.style.borderRadius = '50%';
     needSection3.style.border = '1px solid black';
@@ -168,7 +159,7 @@ toNeedMenu1.addEventListener('click', function() {
   for(let i = 0; i < toNeedMenues.length; i++){
     size(toNeedMenues[i], '90%', '45%');
     flexStyling(toNeedMenues[i], 'flex-start', 'center');
-    toNeedMenues[i].style.cursor = 'pointer';
+    // toNeedMenues[i].style.cursor = 'pointer';
   }
 
   toNeedMenu1.textContent = 'My pick cat';

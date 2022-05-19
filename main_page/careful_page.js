@@ -17,12 +17,11 @@ function boxStyling(target, w, h, bgc, radius = '0%'){
   target.style.borderRadius = radius;
 }
 
-function positionStyling(target, posi, zIndex = '0',top= '0', left = '0', bottom= '0',){
+function positionStyling(target, posi, top= '0', left = '0', zIndex = '0'){
   target.style.position = posi;
   target.style.zIndex = zIndex;
   target.style.top = top;
   target.style.left = left;
-  target.style.bottom = bottom;
 }
 
 let colorArr2 = ['#ebebeb', '#c0c0c0', '#a1a1a1', '#838383', '#464646', '#363636'];
@@ -35,12 +34,12 @@ const mainContainer2 = root2.children[1];
 
 // console.dir(mainContainer2);
 
-const MainLeftContainer = document.getElementById('left-container');
+const mainLeftContainer = document.getElementById('left-container');
 
 // console.dir(MainLeftContainer);
 // console.log(MainLeftContainer.children[1]);
 
-const carefulBtn = MainLeftContainer.children[1];
+const carefulBtn = mainLeftContainer.children[1];
 
 // console.log(carefulBtn);
 
@@ -132,9 +131,13 @@ carefulBtn.addEventListener('click', function() {
     // makeSections[3].children[2]
 
     boxStyling(makeSections[0].children[2], '200px', '200px', colorArr2[0], '50%');
-    positionStyling(makeSections[0].children[2], 'absolute', '20vh',);
+    positionStyling(makeSections[0].children[2], 'absolute', '20vh', '5vw');
 
-    // 4section과 자식만들기 styling 끝
+    boxStyling(makeSections[3].children[2], '200px', '200px', colorArr2[0], '50%');
+    positionStyling(makeSections[3].children[2], 'absolute', '60vh', '25vw');
+
+
+    // 4section과 자식만들기 styling 끝 ',top= '0', left = '0', bottom= '0'
 
   /* const carefulSection2 -----------------------*/
 
@@ -174,7 +177,7 @@ carefulBtn.addEventListener('click', function() {
   for(let i = 0; i < careMenues.length; i++){
     size(careMenues[i], '90%', '45%');
     flexStyling(careMenues[i], 'flex-start', 'center');
-    careMenues[i].style.cursor = 'pointer';
+    // careMenues[i].style.cursor = 'pointer';
   }
 
   careMenu1.textContent = 'My pick cat';

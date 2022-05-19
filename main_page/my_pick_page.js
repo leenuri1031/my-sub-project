@@ -185,7 +185,7 @@ if(boolean === true){
   for(let i = 0; i < menues.length; i++){
     size(menues[i], '90%', '45%');
     flexStyling(menues[i], 'flex-start', 'center');
-    menues[i].style.cursor = 'pointer';
+    // menues[i].style.cursor = 'pointer';
   }
 
   menu1.textContent = 'My pick cat';
