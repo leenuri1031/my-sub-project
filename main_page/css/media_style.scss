@@ -62,9 +62,6 @@ $per-100:100%;
   background-color: $col;
 }
 
-
-
-
 @mixin font-style($rem, $weight, $col) {
   font-size: $rem ;
   font-weight: $weight;
@@ -76,6 +73,15 @@ $per-100:100%;
   left: $left;
   top: $top;
   z-index: $zin;
+}
+
+@mixin img-style($url, $posi) {
+  background : {
+    image : $url;
+    repeat : no-repeat;
+    position: $posi;
+  };
+
 }
 
 

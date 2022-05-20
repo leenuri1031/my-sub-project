@@ -19,6 +19,11 @@ function boxStyling(target, w, h, bgc, radius = '0%'){
 
 let colorArr = ['#ebebeb', '#c0c0c0', '#a1a1a1', '#838383', '#464646', '#363636'];
 
+function createElement (tag, parent){
+  let objName = document.createElement(tag);
+  parent.appendChild(objName);
+}
+
 
 /* -------------------------------------------------------------------- */
 let body = document.body;
@@ -64,8 +69,7 @@ if(boolean === true){
   // mainBox.appendChild(section); 총 4개의 section을 만들어야 하기 때문에 반복문 필요
   
   for(let i = 0; i < 4; i++){
-    const section = document.createElement('section');
-    container.appendChild(section);
+    createElement('section', container);
   }
   // for문으로 section*4 동적 생성 완료
   // console.log(container.children);
@@ -116,9 +120,9 @@ if(boolean === true){
   flexStyling(section2Right, 'space-evenly', 'flex-start', 'column');
 
   const section2RightH2 = document.createElement('h2');
-  const section2RightText = document.createElement('div');
-
   section2Right.appendChild(section2RightH2);
+
+  const section2RightText = document.createElement('div');
   section2Right.appendChild(section2RightText);
 
 
@@ -187,7 +191,7 @@ if(boolean === true){
   for(let i = 0; i < menues.length; i++){
     size(menues[i], '90%', '45%');
     flexStyling(menues[i], 'flex-start', 'center');
-    // menues[i].style.cursor = 'pointer';
+    menues[i].style.cursor = 'pointer';
   }
 
   menu1.textContent = 'My pick cat';
@@ -197,8 +201,11 @@ if(boolean === true){
 
   menu1.style.color = '#A8A8A8';
   // section4
+
 }
 });
+
+
 
 
 
