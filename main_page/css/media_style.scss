@@ -27,7 +27,6 @@ $per-100:100%;
 
 *{margin: 0; padding: 0;  box-sizing: border-box;}
 
-
 @mixin position($posi, $zindx) {
   position: $posi;
   z-index: $zindx;
@@ -80,101 +79,63 @@ $per-100:100%;
 }
 
 
+
+
 // ------------------------------------------------------
 
-#root{
-  @include root-style();
-}
+@media(min-width:800px){
+  header {
+    display: none;
+  }
 
-header{
-  @include size($per-100, 7vh);
-  border-bottom: $solid-gray;
-}
+  main {
+    @include size($per-100, 100vh);
+    @include flex-setting(center, center);
+  }
 
-main{
-  @include main-style();
-
-  &>section{
+  #main-top{
+    @include box-style(80%, 70%, $color-1);
     @include flex-setting(space-evenly, center);
-  }
-
-}
-
-#main-top{
-  @include size(95%, 35%);
-  position: relative;
-
-  &>div:nth-child(1){
-    @include box-style(250px, 250px, $color-1);
-    border-radius: 50%;
-    @include posi-style(20%, 20%,1);
-  }
-  
-  &>div:nth-child(2){
-    @include size(89%, 15%);
-    @include posi-style(10%, 60%,2);
-    @include font-style(2rem, 600, $color-4);
-  }
-
-  &>div:nth-child(3){
-    display: none;
-  }
-
-  &>div:nth-child(4){
-    display: none;
-  }
-}
-
-#main-bottom{
-  @include size(95%, 50%);
-  color: $color-4;
-
-  &>div{
-    @include size(45%, 80%);
-    @include flex-setting(space-evenly, flex-start);
     flex-direction: column;
-  }
+    
+    &>div:nth-child(1){
+      display: none;
+    }
+    
+    &>div:nth-child(2){
+      display: none;
+      
+    }
+    
+    &>div:nth-child(3){
+      @include flex-setting(space-evenly, center);
+      @include size($per-100, 70%);
 
-}
+      &>div{
+        @include box-style(40%, 80%,$color-2 );
+        @include position(relative, 1);
+      }
 
-#left-container{
-  &> div:nth-child(1){
-    @include box-style(90%,50% , $color-1);
-  }
+      &>div:first-child{
+        bottom: 3vh;
+        left: -2vw;
+      }
 
-  &> div:nth-child(2){
-    @include size(90%, 10%);
-    cursor: pointer;
-  }
-
-  &> div:nth-child(3){
-    @include size(90%, 10%);
-    cursor: pointer;
-
-  }
-}
-
-#right-container{
+      &>div:last-child{
+        top: 5vh;
+      }
+    }
   
-  &> div:nth-child(1){
-    @include size(90%, 10%);
-    cursor: pointer;
-  }
-  
-  &> div:nth-child(2){
-    @include size(90%, 10%);
-    cursor: pointer;
+    &>div:nth-child(4){
+      display: flex;
+      @include size($per-100, 25%);
+      @include font-style(2rem, 600, $color-4);
+      @include flex-setting(center, center);
+    }
+    
   }
 
-  &> div:nth-child(3){
-    @include box-style(90%,50% , $color-1);
+  #main-bottom{
+    display: none;
   }
 }
-
-
-
-
-
-
-
-

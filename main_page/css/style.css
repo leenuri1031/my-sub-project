@@ -34,7 +34,7 @@ main > section {
   height: 35%;
   position: relative;
 }
-#main-top > div:first-child {
+#main-top > div:nth-child(1) {
   width: 250px;
   height: 250px;
   background-color: #ebebeb;
@@ -44,7 +44,7 @@ main > section {
   top: 20%;
   z-index: 1;
 }
-#main-top > div:last-child {
+#main-top > div:nth-child(2) {
   width: 89%;
   height: 15%;
   position: absolute;
@@ -54,6 +54,12 @@ main > section {
   font-size: 2rem;
   font-weight: 600;
   color: #838383;
+}
+#main-top > div:nth-child(3) {
+  display: none;
+}
+#main-top > div:nth-child(4) {
+  display: none;
 }
 
 #main-bottom {

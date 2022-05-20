@@ -1,7 +1,10 @@
 
-  const color1 = '#ebebeb';
-  const color2 = '#c0c0c0';
+module.exports = {
+  const color = ['blue', 'gray', 'red'];
   
-  export default {
-    color1,color2
+  function size(target, rem){
+    target.style.fontSize = rem
   };
+}
+
+

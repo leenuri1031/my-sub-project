@@ -21,8 +21,11 @@ let colorArr = ['#ebebeb', '#c0c0c0', '#a1a1a1', '#838383', '#464646', '#363636'
 
 
 /* -------------------------------------------------------------------- */
+let body = document.body;
+// console.dir(body);
 
 const root = document.getElementById('root');
+const head = root.children[0];
 const mainContainer = root.children[1];
 
 const mainRightBox = document.getElementById('right-container');
@@ -41,17 +44,16 @@ const costMenu = mainLeftBox.children[2];
 // console.log(costMenu);
 
 
-
 let boolean = true;
 myPickMenu.addEventListener('click', function() {
 if(boolean === true){
   // console.log('delete');
   // root.removeChild(mainContainer);
-
+  
   const remove = mainContainer.parentNode.removeChild(mainContainer);
   
   const container = document.createElement('main');
-
+  
   root.appendChild(container);
   // my pick cat클릭시 메인 삭제 후 다시 생성 
   // const mainBox = root.children[1];
@@ -60,7 +62,7 @@ if(boolean === true){
   
   root.style.color = colorArr[3];
   // mainBox.appendChild(section); 총 4개의 section을 만들어야 하기 때문에 반복문 필요
-
+  
   for(let i = 0; i < 4; i++){
     const section = document.createElement('section');
     container.appendChild(section);
@@ -68,7 +70,7 @@ if(boolean === true){
   // for문으로 section*4 동적 생성 완료
   // console.log(container.children);
   // 확인하니까 main>section이 4개 생긴 걸 알 수 있었음
-
+  
   const section1 = container.children[0];
   const section2 = container.children[1];
   const section3 = container.children[2];
@@ -197,3 +199,7 @@ if(boolean === true){
   // section4
 }
 });
+
+
+
+
